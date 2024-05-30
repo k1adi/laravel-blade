@@ -36,3 +36,7 @@ Route::get('/html-encoding', function(HttpRequest $request){
         'name' => $request->input('name')
     ]);
 });
+
+Route::get('/disabled', function() {
+    return view('disabled');
+});

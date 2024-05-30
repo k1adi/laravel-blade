@@ -40,3 +40,9 @@ Route::get('/html-encoding', function(HttpRequest $request){
 Route::get('/disabled', function() {
     return view('disabled');
 });
+
+// Route::get('skill', function() {
+//     return view('if-statement', [
+//         'skills' => ['Coding', 'Riding']
+//     ]);
+// });

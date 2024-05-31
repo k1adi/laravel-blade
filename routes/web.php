@@ -40,3 +40,14 @@ Route::get('/html-encoding', function(HttpRequest $request){
 Route::get('/disabled', function() {
     return view('disabled');
 });
+
+Route::get('css-class', function() {
+    return view('css-class', [
+        'skills' => [
+            ['name' => 'Coding', 'love' => false],
+            ['name' => 'Riding', 'love' => true],
+            ['name' => 'Writing', 'love' => false],
+            ['name' => 'Hiking', 'love' => true],
+        ]
+    ]);
+});

@@ -64,3 +64,11 @@ Route::get('/each', function() {
         ],
     ]]);
 });
+
+Route::get('form', function() {
+    return view('form', ['user' => [
+        'premium' => true,
+        'admin' => false,
+        'name' => 'rizki'
+    ]]);
+});

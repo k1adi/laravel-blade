@@ -51,3 +51,16 @@ Route::get('css-class', function() {
         ]
     ]);
 });
+
+Route::get('/each', function() {
+    return view('each', ['users' => [
+        [
+            'name' => 'Rizki',
+            'hobbies' => ['Coding', 'Writing']
+        ],
+        [
+            'name' => 'Adi',
+            'hobbies' => ['Riding', 'Hiking']
+        ],
+    ]]);
+});

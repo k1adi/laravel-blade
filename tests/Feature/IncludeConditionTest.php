@@ -8,15 +8,23 @@ use Tests\TestCase;
 
 class IncludeConditionTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    public function testIncludeWhen()
     {
-        $response = $this->get('/');
+        $this->view('include-condition', [
+            'user' => ['admin' => true, 'name' => 'Rizki']
+        ])
+        ->assertSeeText('Halo, Rizki!')
+        ->assertSeeText('Selamat datang, Admin!')
+        ->assertDontSeeText('Selamat datang, User!');
+    }
 
-        $response->assertStatus(200);
+    public function testIncludeUnless()
+    {
+        $this->view('include-condition', [
+            'user' => ['admin' => false, 'name' => 'Kiadi']
+        ])
+        ->assertSeeText('Halo, Kiadi!')
+        ->assertSeeText('Selamat datang, User!')
+        ->assertDontSeeText('Selamat datang, Admin!');
     }
 }

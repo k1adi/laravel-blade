@@ -7,6 +7,8 @@
     <title>Include Condition</title>
 </head>
 <body>
-    
+    @includeWhen($user['admin'], 'layout.content-admin', [])
+    @includeUnless($user['admin'], 'layout.content-user', [])
+    <p>Halo, {{$user['name']}}! </p>
 </body>
 </html>
